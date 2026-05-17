@@ -7,7 +7,9 @@ import Navbar from './component/Navbar';
 import TodoForm from './component/TodoForm';
 import TodoList from './component/TodoList';
 
-const API_URL = 'http://localhost:3000/api/todos';
+const API_URL = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/api/todos` 
+  : 'http://localhost:3000/api/todos';
 
 function App() {
     const [todos, setTodos] = useState([]);
