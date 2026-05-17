@@ -12,7 +12,9 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({origin: "*", // Shuru mein verification ke liye sab allow kar dein
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true}));
 app.use(express.json());
 
 // Routes
